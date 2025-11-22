@@ -3,16 +3,13 @@
 ```mermaid
 graph TB
     %% Título principal
-    subgraph "ARQUITETURA DE APLICAÇÕES WEB"
+    A[ARQUITETURA DE APLICAÇÕES WEB]
     
     %% Categorias principais
-    subgraph CAT1["CATEGORIAS PRINCIPAIS"]
-        A[Infraestrutura] --> D[Modelos de Infraestrutura]
-        B[Componentes] --> E[Elementos da Aplicação]
-        C[Arquitetura] --> F[Camadas e Padrões]
-    end
+    B[CATEGORIAS PRINCIPAIS]
     
-    %% Modelos de Infraestrutura
+    %% Infraestrutura
+    C[Infraestrutura]
     subgraph D["MODELOS DE INFRAESTRUTURA"]
         D1[Cliente-Servidor]
         D2[Um Servidor]
@@ -21,48 +18,58 @@ graph TB
     end
     
     %% Componentes
-    subgraph E["COMPONENTES DA APLICAÇÃO"]
-        E1[Cliente]
-        E2[Servidor]
-        E3[Webserver]
-        E4[Lógica da Aplicação]
-        E5[Banco de Dados]
-        E6[Serviços/Microserviços]
-        E7[Integrações 3rd Party]
-        E8[Funções Serverless]
+    E[Componentes]
+    subgraph F["COMPONENTES DA APLICAÇÃO"]
+        F1[Cliente]
+        F2[Servidor]
+        F3[Webserver]
+        F4[Lógica da Aplicação]
+        F5[Banco de Dados]
+        F6[Serviços/Microserviços]
+        F7[Integrações 3rd Party]
+        F8[Funções Serverless]
     end
     
     %% Arquitetura
-    subgraph F["ARQUITETURA EM CAMADAS"]
-        F1[Camada de Apresentação<br/>HTML/CSS/JavaScript]
-        F2[Camada de Aplicação<br/>Processamento/Validação]
-        F3[Camada de Dados<br/>Armazenamento/Acesso]
+    G[Arquitetura]
+    subgraph H["ARQUITETURA EM CAMADAS"]
+        H1[Camada de Apresentação<br/>HTML/CSS/JavaScript]
+        H2[Camada de Aplicação<br/>Processamento/Validação]
+        H3[Camada de Dados<br/>Armazenamento/Acesso]
     end
     
     %% Padrões modernos
-    subgraph G["PADRÕES MODERNOS"]
-        G1[Microserviços]
-        G2[Arquitetura Serverless]
-        G3[Arquitetura Orientada a Serviços]
+    I[Padrões Modernos]
+    subgraph J["PADRÕES MODERNOS"]
+        J1[Microserviços]
+        J2[Arquitetura Serverless]
+        J3[Arquitetura Orientada a Serviços]
     end
     
     %% Segurança
-    subgraph H["SEGURANÇA DA ARQUITETURA"]
-        H1[Controle de Acesso RBAC]
-        H2[Segmentação de Ativos]
-        H3[Testes Durante o Ciclo de Vida]
-        H4[Considerações de Design Seguro]
+    K[Segurança]
+    subgraph L["SEGURANÇA DA ARQUITETURA"]
+        L1[Controle de Acesso RBAC]
+        L2[Segmentação de Ativos]
+        L3[Testes Durante o Ciclo de Vida]
+        L4[Considerações de Design Seguro]
     end
     
-    end
-    
-    %% Conexões entre seções
+    %% Conexões verticais
+    A --> B
+    B --> C
+    C --> D
     D --> E
     E --> F
     F --> G
     G --> H
+    H --> I
+    I --> J
+    J --> K
+    K --> L
     
     %% Estilo
+    classDef title fill:#2e7d32,stroke:#fff,color:#fff,stroke-width:2px
     classDef category fill:#e1f5fe,stroke:#01579b,stroke-width:2px
     classDef model fill:#f3e5f5,stroke:#4a148c,stroke-width:1px
     classDef component fill:#e8f5e8,stroke:#1b5e20,stroke-width:1px
@@ -70,10 +77,11 @@ graph TB
     classDef modern fill:#fce4ec,stroke:#880e4f,stroke-width:1px
     classDef security fill:#ffebee,stroke:#b71c1c,stroke-width:1px
     
-    class A,B,C category
+    class A title
+    class B,C,E,G,I,K category
     class D1,D2,D3,D4 model
-    class E1,E2,E3,E4,E5,E6,E7,E8 component
-    class F1,F2,F3 architecture
-    class G1,G2,G3 modern
-    class H1,H2,H3,H4 security
+    class F1,F2,F3,F4,F5,F6,F7,F8 component
+    class H1,H2,H3 architecture
+    class J1,J2,J3 modern
+    class L1,L2,L3,L4 security
 ```
